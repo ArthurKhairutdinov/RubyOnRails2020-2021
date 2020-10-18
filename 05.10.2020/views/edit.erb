@@ -1,0 +1,11 @@
+<h4><%= @result["title"] %></h4>
+
+<form method="POST" action="/todos/<%= @result["id"] %>">
+  <input type="text" name="custom_method" style="display: none" value="PUT">
+
+  <label for="title">Title:</label>
+
+  <input type="text" name="title">
+
+  <input type="submit" value="Submit">
+</form>

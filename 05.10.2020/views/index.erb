@@ -1,0 +1,22 @@
+<div>
+  <ul>
+    <h2><a href="/todos/new">Create new todo</a></h2>
+
+    <% @results.each do |item| %>
+      <li>
+        <a href="/todos/<%= item['id'] %>" style="display: inline-block;">
+          <%= item["title"] %>
+        </a>
+
+        <form method="POST" action="/todos" style="display: inline-block;">
+          <input type="text" name="custom_method" style="display: none" value="DELETE">
+          <input type="text" style="display: none" value="<%= item['id'] %>" name="id">
+
+          <input type="submit" value="Delete">
+        </form>
+
+        <a href="/todos/<%= item['id'] %>/edit">Update</a>
+      </li>
+    <% end %>
+  </ul>
+</div>
